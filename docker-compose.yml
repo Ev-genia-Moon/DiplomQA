@@ -10,7 +10,7 @@ services:
       - MYSQL_DATABASE=app
       - MYSQL_USER=app
       - MYSQL_PASSWORD=pass
-  postgresdb:
+  postgres:
     image: postgres:13-alpine
     restart: always
     ports:
