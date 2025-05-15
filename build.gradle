@@ -6,10 +6,7 @@ plugins {
 
 group = 'ru.netology'
 version = '1.0-SNAPSHOT'
-
-java {
-    sourceCompatibility = 11
-}
+sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
@@ -32,6 +29,9 @@ dependencies {
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'org.slf4j:slf4j-simple:2.0.3'
     testImplementation 'io.qameta.allure:allure-selenide:2.20.1'
+    implementation 'org.postgresql:postgresql:42.7.2'
+    implementation 'io.rest-assured:rest-assured:4.3.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
 }
 
 test {
@@ -41,5 +41,5 @@ test {
     systemProperty 'db.user', System.getProperty('db.user', 'app')
     systemProperty 'db.password',System.getProperty('db.password', 'pass')
     systemProperty 'sut.url', System.getProperty('sut.url', 'http://localhost:8080')
-    systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
+    //systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
 }
