@@ -282,5 +282,5 @@ public class CreditPaymentGateTest {
     }
 
 
-    
+
 }
