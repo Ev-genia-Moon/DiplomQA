@@ -9,13 +9,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SQLHelper {
+
+    private static final String url = System.getProperty("db.url");
+    private static final String user = System.getProperty("db.user");
+    private static final String password  = System.getProperty("db.password");
+
     private static final QueryRunner QUERY_RUNNER = new QueryRunner();
 
     private SQLHelper() {
     }
 
     private static Connection getConn() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
+        return DriverManager.getConnection(url, user, password);
     }
 
     @SneakyThrows
